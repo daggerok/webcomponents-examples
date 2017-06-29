@@ -8,7 +8,7 @@
   <script src="node_modules/webcomponentsjs/micro.js"></script>
 
   <!-- import html components -->
-  <link rel="import" href="components/first-template.html" id="firstTemplateFile">
+  <link rel="import" href="components/first-template.html">
 
   <!-- main application styles -->
   <style>
@@ -43,9 +43,7 @@
       function bootstrap() {
 
         var app = document.querySelector('#app');
-        var templateLink = document.querySelector('#firstTemplateFile');
-        var templateFile = templateLink.import;
-        var template = templateFile.querySelector('#firstTemplate');
+        var template = document.querySelector('#firstTemplate');
 
         document.querySelector('#subject').addEventListener('click', () => {
 

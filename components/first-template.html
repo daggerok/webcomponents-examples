@@ -1,7 +1,11 @@
-<!-- main application templates -->
 <template id="firstTemplate">
   <p>counter: <code></code></p>
-  <script>
-    console.log("finally template script lazy printed only after it became part of html...");
-  </script>
 </template>
+<script>
+
+  var self = document.currentScript.ownerDocument;
+  var template = self.querySelector('#firstTemplate');
+
+  document.body.appendChild(template.cloneNode(true));
+
+</script>
