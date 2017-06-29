@@ -1,0 +1,5 @@
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+
+[source,bash]
+yarn install
+yarn start
