@@ -49,13 +49,8 @@
 
           var nodeCopy = document.importNode(template.content, true); // true means 'deep copy'
           nodeCopy.querySelector('code').textContent = incrementAndGet();
-
           // template initiated:
-          if (app.hasChildNodes()) {
-            app.insertBefore(nodeCopy, app.querySelector('p'));
-          } else {
-            app.appendChild(nodeCopy);
-          }
+          app.insertBefore(nodeCopy, app.firstElementChild);
         });
       }
 
