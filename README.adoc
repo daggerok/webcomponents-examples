@@ -1,6 +1,10 @@
 = webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
 
-02:
+== reusable module
+
+avoid to write boilerplate code to manage templates
+
+== html import
 
 native html imports supports by
 
@@ -9,7 +13,7 @@ native html imports supports by
 
 for others use link:https://github.com/webcomponents/webcomponentsjs[polyfills]
 
-01:
+== simple component
 
 [source,bash]
 yarn install
