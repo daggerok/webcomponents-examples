@@ -7,9 +7,6 @@
   <!-- webcomponents polyfills -->
   <script src="node_modules/webcomponentsjs/micro.js"></script>
 
-  <!-- import html components -->
-  <link rel="import" href="components/first-template.html">
-
   <!-- main application styles -->
   <style>
 
@@ -18,15 +15,23 @@
       margin: 0;
     }
 
+    my-message {
+      background-color: chocolate;
+      border: 1pt solid darkgoldenrod;
+      margin: 0;
+      max-height: 200px;
+      padding: 10pt;
+      position: relative;
+      display: none;
+      top: 0;
+      right: 0;
+    }
+
+    my-message[visible] {
+      display: block;
+    }
+
   </style>
-
-</head>
-<body>
-
-  <!-- main application html -->
-  <h3 id="subject">reusable module</h3>
-
-  <div id="app"></div>
 
   <!-- main application scripts -->
   <script>
@@ -34,36 +39,62 @@
     (function main() {
       'use strict';
 
-      var counter = 1;
-
-      function incrementAndGet() {
-        return counter++;
+      class MyMessage extends HTMLElement {
+        constructor() {
+          super();
+          this.addEventListener('click', () => {
+            this.visible = false;
+          });
+        }
+        static get observedAttributes() {
+          return ['visible'];
+        }
+        connectedCallback() {
+          console.log('el added');
+          this.visible = this.hasAttribute('visible');
+        }
+        disconnectedCallback() {
+          console.log('el removed from the page.');
+        }
+        adoptedCallback() {
+          console.log('el removed from the page.');
+        }
+        attributeChangedCallback(name, oldValue, newValue) {
+          console.log('attrs changed', name, 'old', oldValue, 'new', newValue);
+        }
+        get visible() {
+          return this.hasAttribute('visible');
+        }
+        set visible(value) {
+          if (value) this.setAttribute('visible', value);
+          else this.removeAttribute('visible');
+        }
       }
 
-      function bootstrap() {
+      customElements.define('my-message', MyMessage);
 
-        var app = document.querySelector('#app');
-        var template = document.querySelector('#firstTemplate');
-
+      window.addEventListener('load', () =>
         document.querySelector('#subject').addEventListener('click', () => {
 
-          var nodeCopy = document.importNode(template.content, true); // true means 'deep copy'
-          nodeCopy.querySelector('code').textContent = incrementAndGet();
-
-          // template initiated:
-          if (app.hasChildNodes()) {
-            app.insertBefore(nodeCopy, app.querySelector('p'));
-          } else {
-            app.appendChild(nodeCopy);
-          }
-        });
-      }
-
-      window.addEventListener('DOMContentLoaded', bootstrap);
+          var myMessage = document.querySelector('#banner');
+          myMessage.visible = !myMessage.visible;
+          console.log(myMessage.visible);
+        })
+      );
 
     })();
 
   </script>
+
+</head>
+<body>
+
+  <!-- main application html -->
+  <h3 id="subject">custom elements</h3>
+
+  <my-message id="banner" visible>
+    <div class="my-message">this is a message banner.</div>
+  </my-message>
 
 </body>
 </html>

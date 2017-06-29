@@ -1,4 +1,10 @@
-= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=04-define-custom-element["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+
+== custom elements
+
+. names must contains dashes
+. create js class tp define behavior
+. call customElements.define() to define element.
 
 == reusable module
 
