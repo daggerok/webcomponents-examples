@@ -3,10 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <title>web components</title>
-  <link rel="stylesheet" href="index.css">
+
+  <!-- main application styles -->
+  <style>
+
+    body {
+      padding: 1%;
+      margin: 0;
+    }
+
+  </style>
+
 </head>
 <body>
-  <p>web components</p>
-  <script src="index.js"></script>
+
+  <!-- main application templates -->
+  <template id="firstTemplate">
+    <p>counter: <code></code></p>
+    <script>
+      console.log("finally template script lazy printed only after it became part of html...");
+    </script>
+  </template>
+
+  <!-- main application html -->
+  <h3 id="subject">lazy counted component</h3>
+
+  <div id="app"></div>
+
+  <!-- main application scripts -->
+  <script>
+
+    (function main() {
+      'use strict';
+
+      var counter = 1;
+
+      function incrementAndGet() {
+        return counter++;
+      }
+
+      function bootstrap() {
+
+        var app = document.querySelector('#app');
+        var template = document.querySelector('#firstTemplate');
+
+        document.querySelector('#subject').addEventListener('click', () => {
+
+          var nodeCopy = document.importNode(template.content, true); // true means 'deep copy'
+          nodeCopy.querySelector('code').textContent = incrementAndGet();
+
+          // template initiated:
+          if (app.hasChildNodes()) {
+            app.insertBefore(nodeCopy, app.querySelector('p'));
+          } else {
+            app.appendChild(nodeCopy);
+          }
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', bootstrap);
+
+    })();
+
+  </script>
+
 </body>
 </html>
