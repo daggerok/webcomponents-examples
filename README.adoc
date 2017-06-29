@@ -1,4 +1,15 @@
-= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=02-using-html-import-add-polyfills["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+
+02:
+
+native html imports supports by
+
+. opera
+. chrome
+
+for others use link:https://github.com/webcomponents/webcomponentsjs[polyfills]
+
+01:
 
 [source,bash]
 yarn install

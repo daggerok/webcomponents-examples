@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <title>web components</title>
 
+  <!-- webcomponents polyfills -->
+  <script src="node_modules/webcomponentsjs/micro.js"></script>
+
+  <!-- import html components -->
+  <link rel="import" href="components/first-template.html" id="firstTemplateFile">
+
   <!-- main application styles -->
   <style>
 
@@ -17,16 +23,8 @@
 </head>
 <body>
 
-  <!-- main application templates -->
-  <template id="firstTemplate">
-    <p>counter: <code></code></p>
-    <script>
-      console.log("finally template script lazy printed only after it became part of html...");
-    </script>
-  </template>
-
   <!-- main application html -->
-  <h3 id="subject">lazy counted component</h3>
+  <h3 id="subject">html imported component</h3>
 
   <div id="app"></div>
 
@@ -45,7 +43,9 @@
       function bootstrap() {
 
         var app = document.querySelector('#app');
-        var template = document.querySelector('#firstTemplate');
+        var templateLink = document.querySelector('#firstTemplateFile');
+        var templateFile = templateLink.import;
+        var template = templateFile.querySelector('#firstTemplate');
 
         document.querySelector('#subject').addEventListener('click', () => {
 

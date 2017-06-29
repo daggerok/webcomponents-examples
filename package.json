@@ -13,5 +13,8 @@
     "@types/node": "8.0.5",
     "lite-server": "2.3.0",
     "serve": "6.0.0"
+  },
+  "dependencies": {
+    "webcomponentsjs": "1.0.2"
   }
 }
