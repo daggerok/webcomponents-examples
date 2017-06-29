@@ -4,7 +4,7 @@ module.exports = {
     './**/*.*'
   ],
   watchOptions: {
-    ignored: 'node_modules'
+    ignored: './node_modules'
   },
   server: {
     baseDir: './',
