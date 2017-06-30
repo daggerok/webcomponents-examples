@@ -5,9 +5,10 @@
   <title>web components</title>
 
   <!-- webcomponents polyfills -->
-  <script src="node_modules/@webcomponents/shadydom/shadydom.min.js"></script>
-  <script src="node_modules/@webcomponents/shadycss/apply-shim.min.js"></script>
   <script src="node_modules/webcomponentsjs/full.js"></script>
+
+  <!-- import custom components -->
+  <link rel="import" href="components/my-message.html">
 
   <!-- main application styles -->
   <style>
@@ -35,92 +36,17 @@
 
   </style>
 
-  <!-- my-message template -->
-  <template id="my-message-template">
-    <style>
-      :host {
-        font-family: sans-serif;
-        color: antiquewhite;
-        display: none;
-      }
-
-      :host([visible]) {
-        display: block;
-      }
-
-      :host([type="critical"]) {
-        background: red;
-        border: 1pt solid yellowgreen;
-        font-weight: 900;
-      }
-
-      :host #close-box {
-        cursor: pointer;
-      }
-    </style>
-
-    <div id="content" class="my-message-class">
-      <button id="close-box"> x </button>
-      <slot></slot>
-    </div>
-  </template>
-
   <!-- main application scripts -->
   <script>
 
     (function main() {
       'use strict';
 
-      class MyMessage extends HTMLElement {
-        constructor() {
-          super();
-        }
-        static get observedAttributes() {
-          return ['visible'];
-        }
-        connectedCallback() {
-          console.log('el added');
-          this.visible = this.hasAttribute('visible');
-          const shadowRoot = this.attachShadow({ mode: 'open' });
-          const template = document.querySelector('#my-message-template');
-          shadowRoot.appendChild(document.importNode(template.content, true));
-
-          const closeBox = shadowRoot.querySelector('#close-box');
-          closeBox.addEventListener('click', () => {
-            this.visible = false;
-          });
-
-          const shadowDomSupported = !!HTMLElement.prototype.attachShadow;
-          if (!shadowDomSupported) {
-            ShadyCSS.applyStyle(this);
-          }
-        }
-        disconnectedCallback() {
-          console.log('el removed from the page.');
-        }
-        adoptedCallback() {
-          console.log('el removed from the page.');
-        }
-        attributeChangedCallback(name, oldValue, newValue) {
-          console.log('attrs changed', name, 'old', oldValue, 'new', newValue);
-        }
-        get visible() {
-          return this.hasAttribute('visible');
-        }
-        set visible(value) {
-          if (value) this.setAttribute('visible', value);
-          else this.removeAttribute('visible');
-        }
-      }
-
-      customElements.define('my-message', MyMessage);
-
       window.addEventListener('load', () =>
         document.querySelector('#subject').addEventListener('click', () => {
 
-          var myMessage = document.querySelector('#banner');
+          const myMessage = document.querySelector('#banner');
           myMessage.visible = !myMessage.visible;
-          console.log(myMessage.visible);
         })
       );
 
