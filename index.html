@@ -5,7 +5,7 @@
   <title>web components</title>
 
   <!-- webcomponents polyfills -->
-  <script src="node_modules/webcomponentsjs/micro.js"></script>
+  <script src="node_modules/webcomponentsjs/full.js"></script>
 
   <!-- main application styles -->
   <style>
@@ -101,7 +101,10 @@
   <h3 id="subject">shadow DOM</h3>
 
   <my-message id="banner" visible>
-    <div class="my-message">this is a message banner.</div>
+    <span slot="title">Hola!</span>
+    <div class="my-message">
+      this is a message banner.
+    </div>
   </my-message>
 
 </body>
