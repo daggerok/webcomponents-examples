@@ -54,7 +54,12 @@
           this.visible = this.hasAttribute('visible');
           const shadowRoot = this.attachShadow({ mode: 'open' });
           // shadowRoot.innerHTML = `<p>test shadow dom is broke a custom element</p>`
-          shadowRoot.innerHTML = `<p><slot></slot></p>`
+          shadowRoot.innerHTML = `
+            <p>
+              <slot name="title">Attention (overriding):</slot>
+              <slot></slot>
+            </p>
+          `;
         }
         disconnectedCallback() {
           console.log('el removed from the page.');
