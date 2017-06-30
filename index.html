@@ -33,6 +33,14 @@
 
   </style>
 
+  <!-- my-message template -->
+  <template id="my-message-template">
+    <div id="content" class="my-message">
+      <button id="close-box"> x </button>
+      <slot></slot>
+    </div>
+  </template>
+
   <!-- main application scripts -->
   <script>
 
@@ -42,9 +50,6 @@
       class MyMessage extends HTMLElement {
         constructor() {
           super();
-          this.addEventListener('click', () => {
-            this.visible = false;
-          });
         }
         static get observedAttributes() {
           return ['visible'];
@@ -53,13 +58,13 @@
           console.log('el added');
           this.visible = this.hasAttribute('visible');
           const shadowRoot = this.attachShadow({ mode: 'open' });
-          // shadowRoot.innerHTML = `<p>test shadow dom is broke a custom element</p>`
-          shadowRoot.innerHTML = `
-            <p>
-              <slot name="title">Attention (overriding):</slot>
-              <slot></slot>
-            </p>
-          `;
+          const template = document.querySelector('#my-message-template');
+          shadowRoot.appendChild(document.importNode(template.content, true));
+
+          const closeBox = shadowRoot.querySelector('#close-box');
+          closeBox.addEventListener('click', () => {
+            this.visible = false;
+          });
         }
         disconnectedCallback() {
           console.log('el removed from the page.');
