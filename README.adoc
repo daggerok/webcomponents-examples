@@ -1,4 +1,4 @@
-= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=08-template-styling["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
 
 == shadow DOM
 
