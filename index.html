@@ -5,6 +5,8 @@
   <title>web components</title>
 
   <!-- webcomponents polyfills -->
+  <script src="node_modules/@webcomponents/shadydom/shadydom.min.js"></script>
+  <script src="node_modules/@webcomponents/shadycss/apply-shim.min.js"></script>
   <script src="node_modules/webcomponentsjs/full.js"></script>
 
   <!-- main application styles -->
@@ -35,7 +37,29 @@
 
   <!-- my-message template -->
   <template id="my-message-template">
-    <div id="content" class="my-message">
+    <style>
+      :host {
+        font-family: sans-serif;
+        color: antiquewhite;
+        display: none;
+      }
+
+      :host([visible]) {
+        display: block;
+      }
+
+      :host([type="critical"]) {
+        background: red;
+        border: 1pt solid yellowgreen;
+        font-weight: 900;
+      }
+
+      :host #close-box {
+        cursor: pointer;
+      }
+    </style>
+
+    <div id="content" class="my-message-class">
       <button id="close-box"> x </button>
       <slot></slot>
     </div>
@@ -65,6 +89,11 @@
           closeBox.addEventListener('click', () => {
             this.visible = false;
           });
+
+          const shadowDomSupported = !!HTMLElement.prototype.attachShadow;
+          if (!shadowDomSupported) {
+            ShadyCSS.applyStyle(this);
+          }
         }
         disconnectedCallback() {
           console.log('el removed from the page.');
@@ -103,7 +132,13 @@
 <body>
 
   <!-- main application html -->
-  <h3 id="subject">shadow DOM</h3>
+  <h3 id="subject">styles for shadow DOM using <code>:host</code> selector</h3>
+
+  <ul>
+    <li><code>:host { ... }</code></li>
+    <li><code>:host([disabled]) { ... }</code></li>
+    <li><code>:host(.important) { ... }</code></li>
+  </ul>
 
   <my-message id="banner" visible>
     <span slot="title">Hola!</span>

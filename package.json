@@ -10,9 +10,12 @@
     "start": "lite-server -c bs-config.js"
   },
   "devDependencies": {
+    "@webcomponents/shadydom": "1.0.0",
+    "@webcomponents/template": "1.0.0",
     "lite-server": "2.3.0"
   },
   "dependencies": {
+    "@webcomponents/shadycss": "1.0.1",
     "webcomponentsjs": "1.0.2"
   }
 }
