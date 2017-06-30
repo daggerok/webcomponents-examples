@@ -1,4 +1,15 @@
-= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-playground.svg?branch=05-shadow-dom["Build Status", link="https://travis-ci.org/daggerok/webcomponents-playground"]
+
+== shadow DOM
+
+element should manage it's own js/css/html
+
+[source,javascript]
+----
+var shadow = document.createShadow({ mode: "open" });
+shadow.innerHTML = ...
+shadow.appendChild(someNode);
+----
 
 == custom elements
 

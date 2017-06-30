@@ -52,6 +52,8 @@
         connectedCallback() {
           console.log('el added');
           this.visible = this.hasAttribute('visible');
+          const shadowRoot = this.attachShadow({ mode: 'open' });
+          shadowRoot.innerHTML = `<p>test shadow dom is broke a custom element</p>`
         }
         disconnectedCallback() {
           console.log('el removed from the page.');
@@ -90,7 +92,7 @@
 <body>
 
   <!-- main application html -->
-  <h3 id="subject">custom elements</h3>
+  <h3 id="subject">shadow DOM</h3>
 
   <my-message id="banner" visible>
     <div class="my-message">this is a message banner.</div>
