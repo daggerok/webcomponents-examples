@@ -20,27 +20,25 @@ before_install:
 
 before_script:
   - npm i -g yarn
-  - yarn global add npm-check-updates
 
 script:
   - export ROOT=$PWD
   - >
     for path in \
-      01-getting-started \
-    ; do
-      export TARGET="$ROOT/$path";
-      cd $TARGET;
-      yarn -i;
-      yarn predeploy;
-      if [ -f npm-debug.log ]; then cat npm-debug.log; fi;
-      npm outdate
-      yarn upgrade
-      yarn build --report
+      01-getting-started;
+    do
+      export TARGET="$ROOT/$path"
+      cd $TARGET
+
+      yarn -i
+      yarn predeploy
+      if [ -f npm-debug.log ]; then cat npm-debug.log; fi
+
+      - yarn global add npm-check-updates
       ncu -u
       rm -rf yarn.lock
-      yarn install
-      yarn build
-    done;
+      yarn predeploy
+    done
 cache:
   directories:
     - node_modules/
