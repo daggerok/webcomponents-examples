@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><base href="/webcomponents-examples/"/>
+  <meta charset="UTF-8">
+  <title>web components</title>
+  <script src="service-worker-register.js" async></script>
+  <!-- polyfills -->
+  <script src="./bower_components/webcomponentsjs/webcomponents-loader.js" defer></script>
+  <!-- custom components -->
+  <link rel="import" href="./app/components/my-message.html">
+  <!-- global styles -->
+  <link rel="stylesheet" href="./app/style.css">
+</head>
+<body>
+  <!-- main application html -->
+  <h3 id="subject">styles for shadow DOM using <code>:host</code> selector</h3>
+
+  <ul>
+    <li><code>:host { ... }</code></li>
+    <li><code>:host([disabled]) { ... }</code></li>
+    <li><code>:host(.important) { ... }</code></li>
+  </ul>
+
+  <my-message id="banner" visible>
+    <span slot="title">Hola!</span>
+    <div class="my-message">
+      this is a message banner.
+    </div>
+  </my-message>
+
+  <my-message id="banner2" visible type="critical">
+    <span slot="title">Hola!</span>
+    <div class="my-message">
+      critical banner.
+    </div>
+  </my-message>
+
+  <!-- main application scripts -->
+  <script src="./app/main.js" defer></script>
+</body>
+</html>
