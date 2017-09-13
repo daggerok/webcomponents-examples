@@ -8,3 +8,7 @@
 yarn install
 yarn start
 yarn deploy
+
+resources:
+
+. link:https://www.youtube.com/watch?v=T5y_lmLngAk&list=PLOU2XLYxmsIJkA_W95NDrjdkk3dR6Jq4w&index=1[google youtube channel]
