@@ -32,11 +32,13 @@
     "start:serve": "serve --cors --single --port 8000 --ignore 'node_modules,.idea' ./",
     "start:livereload": "livereload",
     "predeploy": "yarn -i; npm-run-all predeploy:*",
-    "predeploy:bash-pre": "bash ./gh-pages/predeploy.bash ./index.html",
-    "predeploy:404-html": "ncp ./index.html ./404.html",
+    "predeploy:bash": "bash ./gh-pages/predeploy.bash ./index.html",
+    "predeploy:404": "ncp ./index.html ./404.html",
     "predeploy:nojekyll": "touch .nojekyll",
     "deploy": "gh-pages --dist ./ --src '{app/**,bower_components/**,.nojekyll,404.html,index.html,service-*.js}' --branch gh-pages --dotfiles=true -m \"Github Pages $(date +%Y-%m-%d) deployment\"",
-    "postdeploy": "bash ./gh-pages/postdeploy.bash ./index.html"
+    "postdeploy": "npm-run-all -p postdeploy:*",
+    "postdeploy:bash": "bash ./gh-pages/postdeploy.bash ./index.html",
+    "postdeploy:clean": "rimraf -rf .nojekyll 404.html index.html-e"
   },
   "description": "webcomponents examples",
   "main": "index.html",
