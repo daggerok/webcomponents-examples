@@ -1,0 +1,47 @@
+{
+  "name": "webcomponents-examples",
+  "version": "0.0.1",
+  "author": "Maksim Kostromin",
+  "homepage": "http://daggerok.github.io/webcomponents-example",
+  "devDependencies": {
+    "@types/service_worker_api": "0.0.9",
+    "@webcomponents/shadycss": "1.0.5",
+    "@webcomponents/shadydom": "1.0.4",
+    "@webcomponents/template": "1.0.0",
+    "gh-pages": "1.0.0",
+    "livereload": "0.6.2",
+    "ncp": "2.0.0",
+    "npm-run-all": "4.1.1",
+    "rimraf": "2.6.2",
+    "serve": "6.0.6",
+    "webcomponentsjs": "1.0.2"
+  },
+  "livereload": {
+    "exclusions": [
+      "bower_components",
+      "node_modules",
+      "*.json",
+      "README.*",
+      "yarn.lock"
+    ]
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "npm-run-all -p start:*",
+    "start:serve": "serve --cors --single --port 8000 --ignore 'node_modules,.idea' ./",
+    "start:livereload": "livereload",
+    "predeploy": "yarn -i; npm-run-all predeploy:*",
+    "predeploy:bash-pre": "bash ./deployment/predeploy.bash ./index.html",
+    "predeploy:404-html": "ncp ./index.html ./404.html",
+    "predeploy:nojekyll": "touch .nojekyll",
+    "deploy": "gh-pages --dist ./ --src '{app/**,bower_components/**,.nojekyll,404.html,index.html,service-*.js}' --branch gh-pages --dotfiles=true -m \"Github Pages $(date +%Y-%m-%d) deployment\"",
+    "postdeploy": "bash ./deployment/postdeploy.bash ./index.html"
+  },
+  "description": "webcomponents examples",
+  "main": "index.html",
+  "license": "MIT",
+  "config": {
+    "bower_directory": "bower_components"
+  },
+  "repository": "https://github.com/daggerok/webcomponents-examples"
+}

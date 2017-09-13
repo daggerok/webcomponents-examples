@@ -1,0 +1,37 @@
+= webcomponents-playground image:https://travis-ci.org/daggerok/webcomponents-examples.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/webcomponents-examples"]
+
+== shadow DOM
+
+element should manage it's own js/css/html
+
+[source,javascript]
+----
+var shadow = document.createShadow({ mode: "open" });
+shadow.innerHTML = ...
+shadow.appendChild(someNode);
+----
+
+== custom elements
+
+. names must contains dashes
+. create js class tp define behavior
+. call customElements.define() to define element.
+
+== reusable module
+
+avoid to write boilerplate code to manage templates
+
+== html import
+
+native html imports supports by
+
+. opera
+. chrome
+
+for others use link:https://github.com/webcomponents/webcomponentsjs[polyfills]
+
+== simple component
+
+[source,bash]
+yarn install
+yarn start

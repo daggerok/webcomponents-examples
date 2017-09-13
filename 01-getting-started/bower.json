@@ -1,0 +1,25 @@
+{
+  "name": "webcomponents-examples",
+  "description": "webcomponents examples",
+  "main": "index.html",
+  "authors": [
+    "Maksim Kostromin"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "webcomponents"
+  ],
+  "homepage": "https://github.com/daggerok/webcomponents-examples",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.10",
+    "shadycss": "1.0.5"
+  }
+}
