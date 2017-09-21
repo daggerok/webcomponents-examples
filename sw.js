@@ -19,10 +19,6 @@ importScripts('workbox-sw.prod.v2.0.1.js');
  */
 const fileManifest = [
   {
-    "url": "404.html",
-    "revision": "edf79410949da0b6c75c5499b117f7ec"
-  },
-  {
     "url": "assets/icon/favicon.ico",
     "revision": "d2f619d796fbe8bed6200da2691aa5b6"
   },
