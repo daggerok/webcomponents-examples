@@ -1,8 +1,8 @@
-<!DOCTYPE html><html dir="ltr" lang="en"><head><base href="/webcomponents-examples/"/><style data-styles="">my-name{font-family:Courier New,Courier,monospace;font-weight:700;}my-name.💎{visibility:inherit;}</style> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Starter App</title> <meta name="theme-color" content="#16161d"> <meta name="apple-mobile-web-app-capable" content="yes"> <link rel="apple-touch-icon" href="/webcomponents-examples/assets/img/icon.png"> <link rel="manifest" href="/webcomponents-examples/manifest.json"> <link rel="icon" type="image/x-icon" href="/webcomponents-examples/assets/icon/favicon.ico"> <meta name="prerendered"><link rel="canonical" href="/webcomponents-examples/"></head>
+<!DOCTYPE html><html dir="ltr" lang="en"><head><base href="/webcomponents-examples/"/><style data-styles="">my-name{font-family:Courier New,Courier,monospace;font-weight:700;}my-name.💎{visibility:inherit;}</style> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Stencil Starter App</title> <meta name="theme-color" content="#16161d"> <meta name="apple-mobile-web-app-capable" content="yes"> <link rel="apple-touch-icon" href="assets/img/icon.png"> <link rel="manifest" href="manifest.json"> <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico"> <meta name="prerendered"><link rel="canonical" href="/webcomponents-examples/"></head>
 <body> <my-name first="Stencil" last="JS" data-ssrv="0" class="💎"><div data-ssrc="0.0"><!--s.0.0-->Hello, my name is <!--/--> <!--s.0.1-->Stencil<!--/--> <!--s.0.2--> <!--/--> <!--s.0.3-->JS<!--/--> </div></my-name> <script>
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('/webcomponents-examples/sw.js')
           .then(reg => console.log('service worker registered', reg))
           .catch(err => console.log('service worker error', err));
       });

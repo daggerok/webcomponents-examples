@@ -72,7 +72,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "06acfc142053087fcd67d3290ac86d2b"
+    "revision": "40345ccac060585f5918bd9291f72798"
   },
   {
     "url": "manifest.json",
