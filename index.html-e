@@ -1,35 +1,11 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Starter App</title>
-  <script src="/webcomponents-examples/build/app.js"></script>
-
-  <meta name="theme-color" content="#16161d">
-
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="apple-touch-icon" href="/webcomponents-examples/assets/img/icon.png">
-
-  <link rel="manifest" href="/webcomponents-examples/manifest.json">
-  <link rel="icon" type="image/x-icon" href="/webcomponents-examples/assets/icon/favicon.ico">
-
-</head>
-<body>
-
-  <my-name first="Stencil" last="JS"></my-name>
-
-
-  <script>
+<!DOCTYPE html><html dir="ltr" lang="en"><head><base href="/webcomponents-examples/"/><style data-styles="">my-name{font-family:Courier New,Courier,monospace;font-weight:700;}my-name.💎{visibility:inherit;}</style> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Starter App</title> <meta name="theme-color" content="#16161d"> <meta name="apple-mobile-web-app-capable" content="yes"> <link rel="apple-touch-icon" href="/webcomponents-examples/assets/img/icon.png"> <link rel="manifest" href="/webcomponents-examples/manifest.json"> <link rel="icon" type="image/x-icon" href="/webcomponents-examples/assets/icon/favicon.ico"> <meta name="prerendered"><link rel="canonical" href="/webcomponents-examples/"></head>
+<body> <my-name first="Stencil" last="JS" data-ssrv="0" class="💎"><div data-ssrc="0.0"><!--s.0.0-->Hello, my name is <!--/--> <!--s.0.1-->Stencil<!--/--> <!--s.0.2--> <!--/--> <!--s.0.3-->JS<!--/--> </div></my-name> <script>
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      // auto-unregister service worker during dev mode
-      navigator.serviceWorker.ready.then(registration => {
-        registration.unregister().then(() => {
-          location.reload(true);
-        });
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(reg => console.log('service worker registered', reg))
+          .catch(err => console.log('service worker error', err));
       });
     }
-  </script>
-
-</body>
-</html>
+  </script> <script>/*! Built with http://stenciljs.com */
+!function(t,e,i,s,p,r,a,o,d){for((t[i]=t[i]||{}).components=a=a||[],(o=e.createElement("style")).setAttribute("data-styles",""),o.innerHTML=(a.map(function(t){return t[0]}).join(",")+"{visibility:hidden}.💎{visibility:inherit}").toLowerCase(),e.head.insertBefore(o,e.head.firstChild),i=i.toLowerCase(),d=(o=e.scripts).length-1;0<=d;d--)if(o[d].src&&o[d].src.split("/").pop()===i+".js"){s=o[d].src.replace(i+".js",i+"/");break}(o=e.createElement("script")).src=s+(t.customElements&&t.fetch?p:"app.bimwyhdt.pf.js"),o.setAttribute("data-path",s),o.setAttribute("data-core",p),e.head.appendChild(o)}(window,document,"App","/build/app/","app.opuojsxl.js",0,[["MY-NAME","t89fh3lc",{$:"uyykddxl"},[["first",1],["last",1]]],["STENCIL-ROUTE","if0opbrp",{}],["STENCIL-ROUTE-LINK","if0opbrp",{},0,0,1],["STENCIL-ROUTER","if0opbrp",{},0,0,1],["STENCIL-ROUTER-REDIRECT","if0opbrp",{}],["TEST-APP","imd9xidt",{}],["TEST-PAGE","imd9xidt",{}]]);</script></body></html>

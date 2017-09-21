@@ -3,9 +3,9 @@
   "components": [
     [
       "MY-NAME",
-      "my-name",
+      "t89fh3lc",
       {
-        "$": "my-name"
+        "$": "uyykddxl"
       },
       [
         [
@@ -20,12 +20,12 @@
     ],
     [
       "STENCIL-ROUTE",
-      "stencil-route",
+      "if0opbrp",
       {}
     ],
     [
       "STENCIL-ROUTE-LINK",
-      "stencil-route",
+      "if0opbrp",
       {},
       0,
       0,
@@ -33,7 +33,7 @@
     ],
     [
       "STENCIL-ROUTER",
-      "stencil-route",
+      "if0opbrp",
       {},
       0,
       0,
@@ -41,22 +41,22 @@
     ],
     [
       "STENCIL-ROUTER-REDIRECT",
-      "stencil-route",
+      "if0opbrp",
       {}
     ],
     [
       "TEST-APP",
-      "test-app",
+      "imd9xidt",
       {}
     ],
     [
       "TEST-PAGE",
-      "test-app",
+      "imd9xidt",
       {}
     ]
   ],
   "loader": "app.js",
   "global": "app.global.js",
-  "core": "app/app.core.js",
-  "corePolyfilled": "app/app.core.pf.js"
+  "core": "app/app.opuojsxl.js",
+  "corePolyfilled": "app/app.bimwyhdt.pf.js"
 }
