@@ -1,0 +1,53 @@
+{
+  "name": "@stencil/starter",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Stencil Starter App",
+  "files": [
+    "www/"
+  ],
+  "scripts": {
+    "build": "stencil build --prerender",
+    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "serve": "stencil-dev-server",
+    "start": "npm run dev",
+    "predeploy": "yarn -i; npm-run-all predeploy:*",
+    "predeploy:build": "yarn build",
+    "predeploy:bash-index.html": "bash ./gh-pages/predeploy.bash ./www/index.html",
+    "predeploy:bash-app.global.js": "bash ./gh-pages/predeploy.bash ./www/build/app.global.js",
+    "predeploy:bash-app-1": "bash ./gh-pages/predeploy.bash ./www/build/app/app.bimwyhdt.pf.js",
+    "predeploy:bash-app-2": "bash ./gh-pages/predeploy.bash ./www/build/app/app.opuojsxl.js",
+    "predeploy:404": "ncp ./www/index.html ./www/404.html",
+    "predeploy:nojekyll": "touch ./www/.nojekyll",
+    "deploy": "gh-pages --dist ./www --branch gh-pages --dotfiles=true -m \"Github Pages $(date +%Y-%m-%d) deployment\"",
+    "postdeploy": "npm-run-all -p postdeploy:*",
+    "postdeploy:bash-index.html": "bash ./gh-pages/postdeploy.bash ./www/index.html",
+    "postdeploy:bash-app.global.js": "bash ./gh-pages/postdeploy.bash ./www/build/app.global.js",
+    "postdeploy:bash-app-1": "bash ./gh-pages/postdeploy.bash ./www/build/app/app.bimwyhdt.pf.js",
+    "postdeploy:bash-app-2": "bash ./gh-pages/postdeploy.bash ./www/build/app/app.opuojsxl.js",
+    "postdeploy:clean": "rimraf -rf ./www/.nojekyll ./www/404.html ./www/*-e ./www/**/*-e"
+  },
+  "dependencies": {
+    "@stencil/core": "next",
+    "@stencil/router": "0.0.9"
+  },
+  "devDependencies": {
+    "@stencil/dev-server": "0.0.17",
+    "@stencil/utils": "0.0.4",
+    "gh-pages": "1.0.0",
+    "ncp": "2.0.0",
+    "npm-run-all": "4.1.1",
+    "rimraf": "2.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-starter.git"
+  },
+  "author": "Ionic Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ionic-team/stencil"
+  },
+  "github": "https://github.com/ionic-team/stencil",
+  "homepage": "http://daggerok.github.io/webcomponents-example"
+}
