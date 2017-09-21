@@ -1,0 +1,62 @@
+{
+  "namespace": "App",
+  "components": [
+    [
+      "MY-NAME",
+      "my-name",
+      {
+        "$": "my-name"
+      },
+      [
+        [
+          "first",
+          1
+        ],
+        [
+          "last",
+          1
+        ]
+      ]
+    ],
+    [
+      "STENCIL-ROUTE",
+      "stencil-route",
+      {}
+    ],
+    [
+      "STENCIL-ROUTE-LINK",
+      "stencil-route",
+      {},
+      0,
+      0,
+      1
+    ],
+    [
+      "STENCIL-ROUTER",
+      "stencil-route",
+      {},
+      0,
+      0,
+      1
+    ],
+    [
+      "STENCIL-ROUTER-REDIRECT",
+      "stencil-route",
+      {}
+    ],
+    [
+      "TEST-APP",
+      "test-app",
+      {}
+    ],
+    [
+      "TEST-PAGE",
+      "test-app",
+      {}
+    ]
+  ],
+  "loader": "app.js",
+  "global": "app.global.js",
+  "core": "app/app.core.js",
+  "corePolyfilled": "app/app.core.pf.js"
+}
