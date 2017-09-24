@@ -1,9 +1,0 @@
-= stencil
-
-[source,bash]
-----
-git clone https://github.com/ionic-team/stencil-starter.git 02-stencil
-cd 02-stencil
-rm -rf .git # git remote rm origin
-yarn -i
-----

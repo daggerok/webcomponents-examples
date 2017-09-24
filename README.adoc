@@ -2,13 +2,12 @@
 
 . link:01-getting-started/[web-components some playground]
 
-== build, start, deploy
-
+.build, start, deploy
 [source,bash]
 yarn install
 yarn start
 yarn deploy
 
-resources:
+links:
 
 . link:https://www.youtube.com/watch?v=T5y_lmLngAk&list=PLOU2XLYxmsIJkA_W95NDrjdkk3dR6Jq4w&index=1[google youtube channel]
