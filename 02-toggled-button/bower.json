@@ -1,0 +1,28 @@
+{
+  "name": "webcomponents-examples",
+  "description": "Polymer examples",
+  "main": "./index.html",
+  "authors": [
+    "Maksim Kostromin <daggerok@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Polymer"
+  ],
+  "homepage": "https://github.com/daggerok/webcomponents-examples",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "fonts"
+  ],
+  "dependencies": {
+    "webcomponentsjs": "1.0.8"
+  },
+  "resolutions": {
+    "webcomponentsjs": "1.0.8"
+  }
+}

@@ -1,0 +1,3 @@
+= Element Template image:https://travis-ci.org/daggerok/polymer-examples.svg?branch=master["Build Status", link="https://travis-ci.org/daggerok/polymer-examples"]
+
+. link:https://www.youtube.com/watch?v=16gvkPfPIx4[a11ycasts #25]

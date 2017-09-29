@@ -25,7 +25,8 @@ script:
   - export ROOT=$PWD
   - >
     for path in \
-      01-getting-started ;
+      02-toggled-button \
+      01-getting-started
     do
       export TARGET="$ROOT/$path"
       cd $TARGET
