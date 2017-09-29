@@ -20,10 +20,11 @@
     "predeploy": "yarn install && npm-run-all predeploy:*",
     "predeploy:bash": "bash ./gh-pages-deployment/predeploy.bash ./index.html",
     "predeploy:404": "ncp ./index.html ./404.html",
+    "predeploy:nojekyll": "touch .nojekyll",
     "deploy": "gh-pages --dist ./ --branch gh-pages --dotfiles=true -m \"Github Pages $(date +%Y-%m-%d) deployment\" --src '{bower_components/**,app/**,.nojekyll,404.html,favicon.ico,index.html}'",
     "postdeploy": "npm-run-all -p postdeploy:*",
     "postdeploy:bash": "bash ./gh-pages-deployment/postdeploy.bash ./index.html",
-    "postdeploy:rimraf": "rimraf -rf ./404.html *-e"
+    "postdeploy:rimraf": "rimraf -rf ./.nojekyll ./404.html index.html-e"
   },
   "babel": {
     "presets": [
